@@ -1,231 +1,233 @@
-# Carbon System - HTML Template Boilerplate
+# IBM Carbon Design System - HTML Template Boilerplate
 
-A comprehensive HTML template boilerplate built with IBM's Carbon Design System, featuring authentication pages, dashboard, RBAC (Role-Based Access Control), data tables, and more.
+A complete, pure HTML template boilerplate built with IBM Carbon Design System principles. No build tools or frameworks required - just open the HTML files directly in your browser.
 
-## 📁 Project Structure
+## 📁 File Structure
 
 ```
-/workspace
-├── templates/
-│   ├── base.html           # Base template with header, sidebar, and common components
-│   ├── login.html          # Login page with password toggle
-│   ├── register.html       # User registration page
-│   ├── reset_password.html # Password reset flow (request & token steps)
-│   └── dashboard.html      # Main dashboard with stats, progress bars, and user table
-├── css/
-│   └── custom.css          # Custom styles extending Carbon Design System
-├── js/
-│   └── app.js              # JavaScript for interactivity and Carbon components
-└── assets/
-    └── icons/              # Custom icons directory
+/workspace/
+├── assets/
+│   ├── css/
+│   │   └── custom.css          # Custom Carbon Design styles
+│   └── js/
+│       └── app.js              # JavaScript utilities and interactions
+├── login.html                  # Login page
+├── register.html               # Registration page
+├── reset_password.html         # Password reset flow
+├── dashboard.html              # Main dashboard with RBAC
+└── README.md                   # This file
 ```
 
-## ✨ Features
+## 🚀 Quick Start
+
+1. **Open any HTML file directly in your browser:**
+   ```bash
+   # On macOS
+   open login.html
+   
+   # On Windows
+   start login.html
+   
+   # On Linux
+   xdg-open login.html
+   ```
+
+2. **Or use a local server (recommended):**
+   ```bash
+   # Using Python 3
+   python3 -m http.server 8000
+   
+   # Then visit http://localhost:8000/login.html
+   ```
+
+## 🎨 Features
 
 ### Authentication Pages
 - **Login** (`login.html`)
-  - Username/email and password fields
+  - Email/password form
   - Password visibility toggle
-  - Remember me checkbox
+  - Remember me option
   - Forgot password link
-  - Link to registration page
+  - Form validation
+  - Demo localStorage authentication
 
 - **Register** (`register.html`)
-  - Email, username, password fields
-  - Password confirmation with validation
-  - Terms of service checkbox
-  - Password strength indicator ready
-  - Link to login page
+  - Full name, email, company fields
+  - Password strength requirements
+  - Password confirmation
+  - Terms acceptance checkbox
+  - Client-side validation
 
 - **Reset Password** (`reset_password.html`)
-  - Two-step flow (request & reset)
-  - Email input for reset link
-  - New password with confirmation
-  - Back to login link
+  - Two-step flow (request + new password)
+  - Email success confirmation
+  - Token-based URL support
+  - Password validation
 
 ### Dashboard (`dashboard.html`)
+- **Header**
+  - Carbon logo
+  - Notifications badge
+  - User dropdown menu
+  - Logout functionality
+
+- **Sidebar Navigation**
+  - Collapsible on mobile
+  - Section dividers
+  - Active state highlighting
+  - RBAC-based visibility
+
 - **Stats Cards**
-  - Total users count
-  - Active roles count
-  - Generated reports
-  - System health percentage
+  - Four metric cards
+  - Percentage change indicators
+  - Color-coded borders
 
 - **Progress Bars**
-  - CPU usage
-  - Memory usage
-  - Storage usage
-  - Network usage
+  - System metrics display
+  - Color states (success, warning, danger)
+  - Animated fills
 
-- **User Management Data Table**
+- **Data Table**
   - Sortable columns
-  - Search functionality
   - Row selection (checkboxes)
-  - Role tags with colors
-  - Status indicators
-  - Overflow menu for actions
+  - Search/filter functionality
+  - Status badges
+  - Action buttons (edit, delete)
   - Pagination controls
-  - Add user modal
+  - Export options
 
-### Components Included
-
-#### Navigation
-- Header with logo and user menu
-- Side navigation with active state
-- Breadcrumb navigation
-- Responsive mobile support
-
-#### UI Elements
-- Buttons (primary, secondary, ghost)
-- Forms with validation
-- Text inputs with toggles
-- Checkboxes
-- Select dropdowns
-- Tags/Badges with color variants
-- Tiles/Cards
-- Modals
-- Toast notifications
-- Inline notifications
-
-#### Data Display
-- Data tables with sorting
-- Progress bars
-- Stats cards
-- Activity lists
-- Empty states
-
-#### Icons
-- SVG icons throughout
-- Carbon Icons integration
-- Custom icon components
+- **Modals**
+  - Add user form
+  - Edit user form
+  - Export options
+  - Notifications panel
 
 ### RBAC (Role-Based Access Control)
-- User role display in tables
-- Permission-based menu items
-- Admin-only navigation options
-- Role tags with color coding:
-  - Green: Active/Admin
-  - Blue: Manager
-  - Purple: Special roles
-  - Orange: System
-  - Gray: Default/User
+- Permission-based element visibility
+- `data-permission` attribute for hiding elements
+- `data-requires-permission` for disabling buttons
+- Simulated permissions in `app.js`
 
-## 🎨 Carbon Design System
+### Icons
+- Boxicons library integration
+- Consistent icon styling
+- Icon buttons throughout
 
-This boilerplate uses IBM's Carbon Design System:
-- **CSS**: Loaded from CDN (`carbon-components.min.css`)
-- **Icons**: Carbon Icons (`carbon-icons.min.css`)
-- **JavaScript**: Carbon Components JS (`carbon-components.min.js`)
+### Responsive Design
+- Mobile-first approach
+- Collapsible sidebar
+- Adaptive grid layouts
+- Touch-friendly controls
 
-### Color Palette
-- Primary Blue: `#0f62fe`
-- Error Red: `#da1e28`
-- Success Green: `#198038`
-- Warning Orange: `#ff8e35`
-- Neutral Gray: `#6f6f6f`
+## 🛠️ Components Included
 
-## 🚀 Usage
+### CSS Classes
+- `.btn`, `.btn-primary`, `.btn-secondary`, `.btn-danger`
+- `.form-input`, `.form-label`, `.form-group`
+- `.card`, `.card-header`, `.card-title`
+- `.badge`, `.badge-success`, `.badge-warning`, `.badge-danger`
+- `.progress-bar`, `.progress-fill`
+- `.data-table`, `.data-table-container`
+- `.modal-overlay`, `.modal`
+- `.toast`, `.toast-container`
+- `.nav-item`, `.app-sidebar`, `.app-header`
+- `.stats-grid`, `.stat-card`
 
-### Template Variables
+### JavaScript Functions
+- `showToast(message, type)` - Display notifications
+- `confirmAction(message, callback)` - Confirmation dialogs
+- `formatDate(dateString)` - Date formatting
+- `filterTable()` - Table search functionality
+- `toggleUserMenu()` - User dropdown toggle
+- `logout()` - Clear session and redirect
 
-#### Base Template
-```python
-context = {
-    'user': {
-        'is_authenticated': True,
-        'username': 'john.doe',
-        'initials': 'JD',
-        'has_permission': lambda perm: True  # RBAC check
-    },
-    'active_page': 'dashboard',  # For sidebar highlighting
-    'messages': [...]  # Django-style messages
-}
-```
+## 🔐 Demo Authentication
 
-#### Dashboard Template
-```python
-context = {
-    'stats': {
-        'total_users': 1250,
-        'total_roles': 8,
-        'total_reports': 45,
-        'system_health': 98
-    },
-    'metrics': {
-        'cpu': 45,
-        'memory': 62,
-        'storage': 38,
-        'network': 28
-    },
-    'recent_activities': [
-        {
-            'type': 'login',
-            'description': 'User john.doe logged in',
-            'timestamp': '2 minutes ago'
-        }
-    ],
-    'users': [
-        {
-            'id': 1,
-            'username': 'john.doe',
-            'email': 'john@example.com',
-            'role': 'Admin',
-            'role_color': 'green',
-            'is_active': True,
-            'last_login': '2024-01-15 10:30'
-        }
-    ]
-}
-```
-
-### JavaScript API
-
-The `app.js` provides a global `CarbonSystem` object:
+The templates use `localStorage` for demo purposes:
 
 ```javascript
-// Show toast notification
-CarbonSystem.showToast('Operation successful!', 'success');
+// Login stores user data
+localStorage.setItem('user', JSON.stringify({
+  email: 'admin@example.com',
+  name: 'Admin',
+  role: 'admin'
+}));
 
-// Modal control
-CarbonSystem.openModal(document.getElementById('modal-id'));
-CarbonSystem.closeModal(document.getElementById('modal-id'));
+// Dashboard checks for user
+const user = JSON.parse(localStorage.getItem('user'));
+if (!user) {
+  window.location.href = 'login.html';
+}
 
-// Form validation
-CarbonSystem.validateForm(document.querySelector('form'));
-CarbonSystem.validateField(document.getElementById('input-id'));
+// Logout clears user
+localStorage.removeItem('user');
 ```
 
-## 📱 Responsive Design
+## 🎯 RBAC Implementation
 
-- **Desktop** (> 1056px): Full sidebar and header
-- **Tablet** (672px - 1056px): Collapsed sidebar
-- **Mobile** (< 672px): Hidden sidebar, mobile-optimized layout
+Edit permissions in `assets/js/app.js`:
 
-## 🔧 Customization
+```javascript
+const userPermissions = {
+  canViewUsers: true,
+  canEditUsers: true,
+  canDeleteUsers: false,    // Delete buttons will be disabled
+  canViewReports: true,
+  canManageSettings: false  // Settings menu item will be hidden
+};
+```
 
-### Adding Custom Styles
-Edit `/workspace/css/custom.css` to override or extend Carbon styles.
+Use in HTML:
+```html
+<!-- Hide element if no permission -->
+<a href="#" data-permission="canManageSettings">Settings</a>
 
-### Adding Custom JavaScript
-Edit `/workspace/js/app.js` or add scripts via `{% block extra_js %}` in templates.
+<!-- Disable button if no permission -->
+<button data-requires-permission="canDeleteUsers">Delete</button>
+```
 
-### Creating New Pages
-1. Extend `base.html`: `{% extends "base.html" %}`
-2. Override blocks: `{% block content %}...{% endblock %}`
-3. Add page-specific CSS/JS via `{% block extra_css %}` and `{% block extra_js %}`
+## 🌐 Browser Compatibility
 
-## ♿ Accessibility
+- Chrome/Edge (latest)
+- Firefox (latest)
+- Safari (latest)
+- Mobile browsers (iOS Safari, Chrome Mobile)
 
-- ARIA labels and roles throughout
-- Keyboard navigation support
-- Focus indicators
-- Screen reader friendly
-- Skip to main content link
-- Semantic HTML structure
+## 📝 Customization
+
+### Colors
+Edit CSS variables in `assets/css/custom.css`:
+
+```css
+:root {
+  --cds-brand-01: #0f62fe;  /* Primary blue */
+  --cds-brand-02: #0353e9;  /* Hover state */
+  --cds-brand-03: #002d9c;  /* Active state */
+  --cds-ui-background: #f4f4f4;
+  --cds-text-01: #161616;
+  --cds-text-02: #525252;
+}
+```
+
+### Adding New Pages
+1. Copy an existing page as template
+2. Include the CSS and JS files:
+   ```html
+   <link rel="stylesheet" href="assets/css/custom.css">
+   <script src="assets/js/app.js"></script>
+   ```
+3. Use existing component classes for consistency
+
+## 🔗 Resources
+
+- [IBM Carbon Design System](https://carbondesignsystem.com/)
+- [Boxicons](https://boxicons.com/)
+- [IBM Plex Sans Font](https://fonts.google.com/specimen/IBM+Plex+Sans)
 
 ## 📄 License
 
-This boilerplate is provided as-is for use with IBM Carbon Design System.
+This template is provided as-is for educational and commercial use.
 
 ---
 
-**Built with ❤️ using IBM Carbon Design System**
+**Built with ❤️ using IBM Carbon Design principles**
