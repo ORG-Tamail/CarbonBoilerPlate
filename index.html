@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carbon Design System Web Application</title>
+    
+    <!-- Carbon Design System CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/carbon-components/css/carbon-components.min.css">
+    
+    <style>
+        /* Custom styles */
+        .bx--grid {
+            padding: 2rem;
+        }
+        
+        .app-header {
+            background-color: #161616;
+            color: white;
+            padding: 1rem 2rem;
+        }
+        
+        .app-content {
+            min-height: calc(100vh - 64px);
+            padding: 2rem;
+        }
+        
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .card {
+            background: white;
+            border: 1px solid #e0e0e0;
+            padding: 1.5rem;
+            border-radius: 4px;
+        }
+        
+        .card h3 {
+            margin-top: 0;
+            color: #161616;
+        }
+        
+        .status-indicator {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            margin-right: 0.5rem;
+        }
+        
+        .status-active {
+            background-color: #198038;
+        }
+        
+        .status-pending {
+            background-color: #f1c21b;
+        }
+        
+        .status-error {
+            background-color: #da1e28;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="bx--header app-header" role="banner">
+        <div class="bx--grid">
+            <div class="bx--row">
+                <div class="bx--col-lg-16">
+                    <h1 class="bx--header__name">
+                        <span class="bx--header__name--prefix">IBM</span>
+                        Carbon Web Application
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="app-content">
+        <div class="bx--grid">
+            <!-- Page Title Section -->
+            <div class="bx--row">
+                <div class="bx--col-lg-16">
+                    <h2 class="bx--page-title">Dashboard Overview</h2>
+                    <p class="bx--page-description">Monitor your application metrics and manage resources.</p>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="bx--row">
+                <div class="bx--col-lg-16">
+                    <button class="bx--btn bx--btn--primary" type="button">
+                        Primary Action
+                        <svg class="bx--btn__icon" width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                            <path d="M9.3 3.7L13.1 7.5H2v1h11.1l-3.8 3.8.7.7 5-5-5-5z"/>
+                        </svg>
+                    </button>
+                    <button class="bx--btn bx--btn--secondary" type="button">
+                        Secondary Action
+                    </button>
+                    <button class="bx--btn bx--btn--tertiary" type="button">
+                        Tertiary
+                    </button>
+                </div>
+            </div>
+
+            <!-- Stats Cards -->
+            <div class="bx--row card-container">
+                <div class="bx--col-lg-4 bx--col-md-4 bx--col-sm-4">
+                    <div class="card">
+                        <span class="status-indicator status-active"></span>
+                        <h3>Active Users</h3>
+                        <p class="bx--text-helper">Current active sessions</p>
+                        <h1>2,543</h1>
+                        <p class="bx--text-helper">+12% from last week</p>
+                    </div>
+                </div>
+                
+                <div class="bx--col-lg-4 bx--col-md-4 bx--col-sm-4">
+                    <div class="card">
+                        <span class="status-indicator status-pending"></span>
+                        <h3>Pending Tasks</h3>
+                        <p class="bx--text-helper">Tasks awaiting review</p>
+                        <h1>47</h1>
+                        <p class="bx--text-helper">8 require immediate attention</p>
+                    </div>
+                </div>
+                
+                <div class="bx--col-lg-4 bx--col-md-4 bx--col-sm-4">
+                    <div class="card">
+                        <span class="status-indicator status-error"></span>
+                        <h3>Errors</h3>
+                        <p class="bx--text-helper">System errors detected</p>
+                        <h1>3</h1>
+                        <p class="bx--text-helper">All critical issues resolved</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Form Section -->
+            <div class="bx--row" style="margin-top: 2rem;">
+                <div class="bx--col-lg-8 bx--col-md-8 bx--col-sm-4">
+                    <div class="card">
+                        <h3>Create New Item</h3>
+                        
+                        <div class="bx--form-item">
+                            <label for="input-1" class="bx--label">Item Name</label>
+                            <input id="input-1" type="text" class="bx--text-input" placeholder="Enter item name">
+                        </div>
+                        
+                        <div class="bx--form-item" style="margin-top: 1rem;">
+                            <label for="select-1" class="bx--label">Category</label>
+                            <div class="bx--select">
+                                <select id="select-1" class="bx--select-input">
+                                    <option class="bx--select-option" value="">Choose an option</option>
+                                    <option class="bx--select-option" value="cat1">Category 1</option>
+                                    <option class="bx--select-option" value="cat2">Category 2</option>
+                                    <option class="bx--select-option" value="cat3">Category 3</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="bx--form-item" style="margin-top: 1rem;">
+                            <label for="textarea-1" class="bx--label">Description</label>
+                            <textarea id="textarea-1" class="bx--text-area" rows="4" placeholder="Enter description"></textarea>
+                        </div>
+                        
+                        <div class="bx--form-item" style="margin-top: 1rem;">
+                            <label class="bx--checkbox-label">
+                                <input type="checkbox" class="bx--checkbox">
+                                <span class="bx--checkbox-label-text">Enable notifications</span>
+                            </label>
+                        </div>
+                        
+                        <div style="margin-top: 1.5rem;">
+                            <button class="bx--btn bx--btn--primary" type="submit">Submit</button>
+                            <button class="bx--btn bx--btn--secondary" type="button" style="margin-left: 0.5rem;">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bx--col-lg-8 bx--col-md-8 bx--col-sm-4">
+                    <div class="card">
+                        <h3>Recent Activity</h3>
+                        <ul class="bx--list bx--list--unordered">
+                            <li class="bx--list__item">User John Doe updated project settings</li>
+                            <li class="bx--list__item">New deployment completed successfully</li>
+                            <li class="bx--list__item">System backup initiated</li>
+                            <li class="bx--list__item">Security scan completed - no issues found</li>
+                            <li class="bx--list__item">Database optimization finished</li>
+                        </ul>
+                        
+                        <h3 style="margin-top: 1.5rem;">Progress</h3>
+                        <label for="progress-1" class="bx--label">Task Completion</label>
+                        <div data-progress class="bx--progress" id="progress-1">
+                            <div class="bx--progress-step bx--progress-step--complete">
+                                <svg class="bx--progress-checkmark" width="16" height="16" viewBox="0 0 16 16">
+                                    <path d="M13.7 5.3l-7.4 7.4-3.7-3.7.7-.7 3 3 6.7-6.7z"/>
+                                </svg>
+                                <p class="bx--progress-label">Step 1</p>
+                            </div>
+                            <div class="bx--progress-step bx--progress-step--complete">
+                                <svg class="bx--progress-checkmark" width="16" height="16" viewBox="0 0 16 16">
+                                    <path d="M13.7 5.3l-7.4 7.4-3.7-3.7.7-.7 3 3 6.7-6.7z"/>
+                                </svg>
+                                <p class="bx--progress-label">Step 2</p>
+                            </div>
+                            <div class="bx--progress-step bx--progress-step--current">
+                                <p class="bx--progress-label">Step 3</p>
+                            </div>
+                            <div class="bx--progress-step">
+                                <p class="bx--progress-label">Step 4</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Data Table -->
+            <div class="bx--row" style="margin-top: 2rem;">
+                <div class="bx--col-lg-16">
+                    <div class="card">
+                        <h3>Data Overview</h3>
+                        <table class="bx--data-table bx--data-table--zebra">
+                            <thead>
+                                <tr>
+                                    <th scope="col">ID</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Status</th>
+                                    <th scope="col">Date</th>
+                                    <th scope="col">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>#001</td>
+                                    <td>Project Alpha</td>
+                                    <td><span class="status-indicator status-active"></span>Active</td>
+                                    <td>2024-01-15</td>
+                                    <td>
+                                        <button class="bx--btn bx--btn--sm bx--btn--primary" type="button">Edit</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#002</td>
+                                    <td>Project Beta</td>
+                                    <td><span class="status-indicator status-pending"></span>Pending</td>
+                                    <td>2024-01-14</td>
+                                    <td>
+                                        <button class="bx--btn bx--btn--sm bx--btn--primary" type="button">Edit</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#003</td>
+                                    <td>Project Gamma</td>
+                                    <td><span class="status-indicator status-active"></span>Active</td>
+                                    <td>2024-01-13</td>
+                                    <td>
+                                        <button class="bx--btn bx--btn--sm bx--btn--primary" type="button">Edit</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#004</td>
+                                    <td>Project Delta</td>
+                                    <td><span class="status-indicator status-error"></span>Error</td>
+                                    <td>2024-01-12</td>
+                                    <td>
+                                        <button class="bx--btn bx--btn--sm bx--btn--primary" type="button">Edit</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Notification/Toast Example -->
+            <div class="bx--row" style="margin-top: 2rem;">
+                <div class="bx--col-lg-16">
+                    <div class="bx--toast-notification bx--toast-notification--success">
+                        <div class="bx--toast-notification__details">
+                            <h3 class="bx--toast-notification__title">Success</h3>
+                            <p class="bx--toast-notification__subtitle">Operation completed successfully</p>
+                        </div>
+                        <button class="bx--toast-notification__button" aria-label="Close notification">
+                            <svg width="16" height="16" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M13.4 3.3L8.7 8l4.7 4.7-.7.7L8 8.7 3.3 13.4l-.7-.7L7.3 8 2.6 3.3l.7-.7L8 7.3l4.7-4.7z"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bx--footer" style="background-color: #f4f4f4; padding: 2rem; margin-top: 2rem;">
+        <div class="bx--grid">
+            <div class="bx--row">
+                <div class="bx--col-lg-4 bx--col-md-2 bx--col-sm-4">
+                    <h4 class="bx--footer__heading">Resources</h4>
+                    <ul class="bx--footer__links">
+                        <li class="bx--footer__item"><a href="#" class="bx--link">Documentation</a></li>
+                        <li class="bx--footer__item"><a href="#" class="bx--link">Support</a></li>
+                    </ul>
+                </div>
+                <div class="bx--col-lg-4 bx--col-md-2 bx--col-sm-4">
+                    <h4 class="bx--footer__heading">Legal</h4>
+                    <ul class="bx--footer__links">
+                        <li class="bx--footer__item"><a href="#" class="bx--link">Privacy</a></li>
+                        <li class="bx--footer__item"><a href="#" class="bx--link">Terms</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Carbon Design System JavaScript -->
+    <script src="https://unpkg.com/carbon-components/scripts/carbon-components.min.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script>
+        // Initialize Carbon components
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Carbon Design System initialized');
+            
+            // Example: Add interactivity to buttons
+            const buttons = document.querySelectorAll('.bx--btn');
+            buttons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    if (!this.classList.contains('bx--btn--sm')) {
+                        console.log('Button clicked:', this.textContent.trim());
+                    }
+                });
+            });
+            
+            // Example: Form validation
+            const formInputs = document.querySelectorAll('.bx--text-input');
+            formInputs.forEach(input => {
+                input.addEventListener('blur', function() {
+                    console.log('Input validated:', this.value);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

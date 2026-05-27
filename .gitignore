@@ -1,15 +1,1 @@
-# Examples
-assets/css/custom.css
-assets/js/app.js
-dashboard.html
-login.html
-register.html
-reset_password.html
-css/custom.css
-js/app.js
-templates/base.html
-templates/dashboard.html
-templates/login.html
-templates/register.html
-templates/reset_password.html
-README.md
+Nothing should be ignored based on the provided file changes. The only added file is `index.html`, which is a source file and should not be ignored.
