@@ -1,0 +1,434 @@
+/* Carbon System Custom Styles */
+
+/* ===== Base Layout ===== */
+.bx--content {
+    padding: 2rem;
+    margin-left: 16rem;
+    transition: margin-left 0.15s cubic-bezier(0.2, 0, 0.38, 0.9);
+}
+
+.bx--content--login,
+.bx--content--register,
+.bx--content--reset {
+    margin-left: 0;
+    padding: 4rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+/* ===== Login/Register/Reset Pages ===== */
+.login-container,
+.register-container,
+.reset-container {
+    max-width: 28rem;
+    width: 100%;
+}
+
+.login-title,
+.register-title,
+.reset-title {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+    color: #161616;
+}
+
+.login-icon,
+.register-icon,
+.reset-icon {
+    fill: #0f62fe;
+}
+
+.login-subtitle,
+.register-subtitle,
+.reset-subtitle {
+    color: #525252;
+    margin-bottom: 2rem;
+}
+
+.login-form,
+.register-form,
+.reset-form {
+    margin-bottom: 1.5rem;
+}
+
+.login-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.login-actions,
+.register-actions,
+.reset-actions {
+    margin-top: 2rem;
+}
+
+.login-divider {
+    position: relative;
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.login-divider::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: #e0e0e0;
+}
+
+.login-divider span {
+    background-color: #ffffff;
+    padding: 0 1rem;
+    color: #525252;
+    position: relative;
+}
+
+.login-register,
+.register-login,
+.reset-back {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.login-register p,
+.register-login p {
+    color: #525252;
+    margin-bottom: 1rem;
+}
+
+/* ===== Dashboard ===== */
+.dashboard-title {
+    margin-bottom: 0.5rem;
+    color: #161616;
+}
+
+.dashboard-subtitle {
+    color: #525252;
+    margin-bottom: 2rem;
+}
+
+/* Stats Cards */
+.dashboard-stats {
+    margin-bottom: 2rem;
+}
+
+.stat-card {
+    transition: box-shadow 0.15s cubic-bezier(0.2, 0, 0.38, 0.9);
+}
+
+.stat-card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.stat-card__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.stat-card__icon {
+    fill: #0f62fe;
+}
+
+.stat-card__body {
+    margin-bottom: 1rem;
+}
+
+.stat-card__value {
+    font-size: 2.625rem;
+    font-weight: 300;
+    line-height: 1.19;
+    letter-spacing: -0.02em;
+    color: #161616;
+    margin-bottom: 0.25rem;
+}
+
+.stat-card__label {
+    color: #525252;
+}
+
+.stat-card__footer {
+    border-top: 1px solid #e0e0e0;
+    padding-top: 1rem;
+}
+
+/* Progress Section */
+.dashboard-progress {
+    margin-bottom: 2rem;
+}
+
+.progress-item {
+    margin-bottom: 1.5rem;
+}
+
+.progress-item:last-child {
+    margin-bottom: 0;
+}
+
+.progress-item__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.bx--progress-bar {
+    height: 0.5rem;
+    border-radius: 0.25rem;
+    overflow: hidden;
+}
+
+.bx--progress-bar__background {
+    background-color: #e0e0e0;
+    height: 100%;
+    border-radius: 0.25rem;
+}
+
+.bx--progress-bar__progress {
+    background-color: #0f62fe;
+    height: 100%;
+    border-radius: 0.25rem;
+    transition: width 0.3s ease;
+}
+
+/* Activity List */
+.activity-list {
+    margin-top: 1rem;
+}
+
+.activity-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.activity-item:last-child {
+    border-bottom: none;
+}
+
+.activity-item__icon {
+    flex-shrink: 0;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f3f3f3;
+    border-radius: 50%;
+}
+
+.activity-item__icon svg {
+    fill: #0f62fe;
+}
+
+.activity-item__content {
+    flex: 1;
+}
+
+.activity-item__time {
+    color: #6f6f6f;
+    display: block;
+    margin-top: 0.25rem;
+}
+
+/* Table Header */
+.table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.table-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.bx--search--sm {
+    width: 16rem;
+}
+
+/* User Cell */
+.user-cell {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.user-avatar {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background-color: #0f62fe;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+/* Empty State */
+.bx--table-empty-state {
+    text-align: center;
+    padding: 3rem 1rem;
+}
+
+.bx--table-empty-state__icon {
+    fill: #a8a8a8;
+    margin-bottom: 1rem;
+}
+
+/* Modal */
+.bx--modal-container {
+    max-width: 40rem;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 1056px) {
+    .bx--content {
+        margin-left: 3rem;
+    }
+    
+    .bx--side-nav {
+        width: 3rem;
+    }
+    
+    .bx--side-nav__link-text {
+        display: none;
+    }
+    
+    .stat-card__value {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 672px) {
+    .bx--content {
+        margin-left: 0;
+        padding: 1rem;
+    }
+    
+    .dashboard-stats .bx--col-lg-4 {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+    
+    .table-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .table-actions {
+        width: 100%;
+        flex-direction: column;
+    }
+    
+    .bx--search--sm {
+        width: 100%;
+    }
+}
+
+/* ===== Utility Classes ===== */
+.bx--visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Focus States */
+.bx--btn:focus,
+.bx--link:focus,
+.bx--text-input:focus,
+.bx--select-input:focus {
+    outline: 2px solid #0f62fe;
+    outline-offset: 2px;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.stat-card,
+.bx--tile {
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* Tag Colors */
+.bx--tag--green {
+    background-color: #198038;
+    color: #ffffff;
+}
+
+.bx--tag--blue {
+    background-color: #0043ce;
+    color: #ffffff;
+}
+
+.bx--tag--purple {
+    background-color: #6929c4;
+    color: #ffffff;
+}
+
+.bx--tag--orange {
+    background-color: #ba4e00;
+    color: #ffffff;
+}
+
+.bx--tag--gray {
+    background-color: #6f6f6f;
+    color: #ffffff;
+}
+
+/* Toast Notifications */
+.bx--toast-notification-container {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 10000;
+}
+
+.bx--toast-notification {
+    margin-top: 0.5rem;
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
